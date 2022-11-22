@@ -34,6 +34,28 @@
             ?>
             <!--Fin Alert - Error -->
 
+            <!--Inicio Alert - Deleted -->
+            <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'deleted'){
+
+            ?>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>¡BIEN!</strong> Ha eliminado exitosamente el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - Deleted -->
+
             <!--Inicio Alert - Inserted -->
             <?php
                 if(isset($_GET['message']) and $_GET['message'] == 'inserted'){
@@ -106,13 +128,15 @@
                                     <td scope="row"><?php echo $dato->ID;?></td>
                                     <td><?php echo $dato->product_name;?></td>
                                     <td ><?php echo $dato->reference;?></td>
-                                    <td><?php echo $dato->price;?></td>
-                                    <td><?php echo $dato->weigth;?></td>
+                                    <td><?php echo "$". $dato->price;?></td>
+                                    <td><?php echo $dato->weigth. "g";?></td>
                                     <td><?php echo $dato->category;?></td>
                                     <td><?php echo $dato->stock;?></td>
                                     <td><?php echo $dato->creation_date;?></td>
-                                    <td class="text-info"><a href="update.php?id=<?php echo $dato->ID;?>"><i class="bi bi-pencil-fill"></a></i></td>
-                                    <td class="text-danger"><i class="bi bi-trash3-fill"></i></td>
+                                    <td><a class="text-info" href="update.php?id=<?php echo $dato->ID;?>"><i class="
+                                    bi bi-pencil-fill"></a></i></td>
+                                    <td><a class="text-danger" href="delete.php?id=<?php echo $dato->ID;?>"><i class="
+                                    bi bi-trash3-fill"></i></td>
                                 </tr>
                                 <?php 
                                     }
@@ -176,7 +200,13 @@
                 <div class="form-group row">
                     <div class="mb-2 col-md-6 form-group">
                         <label for="category" class="form-label">Categor&iacute;a: </label>
-                        <input type="text" class="form-control" name="category" id="category" required>
+                        <select class="form-control" name="category" id="category" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Comidas">Comidas</option>
+                            <option value="Panader&iacute;a">Panader&iacute;a</option>
+                            <option value="Ensadalas">Ensaladas</option>
+                        </select>    
                     </div>
                     <div class="mb-2 col-md-6 form-group">
                         <label for="stock" class="form-label">Stock: </label>

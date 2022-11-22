@@ -45,7 +45,13 @@
                 <div class="form-group row">
                     <div class="mb-2 col-md-6 form-group">
                         <label for="category" class="form-label">Categor&iacute;a: </label>
-                        <input type="text" class="form-control" name="category" id="category" required value="<?php echo $product->category ?>">
+                        <select class="form-control" name="category" id="category" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Comidas">Comidas</option>
+                            <option value="Panader&iacute;a">Panader&iacute;a</option>
+                            <option value="Ensadalas">Ensaladas</option>
+                        </select>
                     </div>
                     <div class="mb-2 col-md-6 form-group">
                         <label for="stock" class="form-label">Stock: </label>
@@ -63,4 +69,3 @@
     </div>
 </div>
 
-<//?php include 'Template/footer.php' ?>
