@@ -11,6 +11,29 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-11">
+
+            <!--Inicio Alert - Inserted -->
+            <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'inserted'){
+
+            ?>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>¡BIEN!</strong> Se ha creado el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - Inserted -->
+
             <div class="card">
                 <div class="card-header text-center">
                     <b>PRODUCTOS</b>                    
@@ -56,6 +79,51 @@
             </div>
         </div>
         <div class="col-md-4 p-4">
+            <!--Inicio Alert - Missing -->
+            <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'missing'){
+
+            ?>
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>¡ERROR!</strong> Faltan algunos campos necesarios para crear el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - Missing -->
+
+             <!--Inicio Alert - NoInserted -->
+             <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'noinserted'){
+
+            ?>
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>¡ERROR!</strong> No se pudo crear el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - NoInserted -->
+
+
             <div class="card">
                 <div class="card-header text-center">
                     <b>CREACIÓN DE PRODUCTOS</b>
@@ -64,31 +132,31 @@
                 <div class="form-group row">    
                     <div class="mb-2 col-md-6 form-group">
                         <label for="name" class="form-label">Nombre: </label>
-                        <input type="text" class="form-control" name="name" id="name">
+                        <input type="text" class="form-control" name="name" id="name" required>
                     </div>
                     <div class="mb-2 mb-2 col-md-6 form-group">
                         <label for="reference" class="form-label">Referencia: </label>
-                        <input type="text" class="form-control" name="reference" id="reference">
+                        <input type="text" class="form-control" name="reference" id="reference" required> 
                     </div>
                 </div>
                 <div class="form-group row">  
                     <div class="mb-2 col-md-6 form-group">
                         <label for="price" class="form-label">Precio: </label>
-                        <input type="number" class="form-control" name="price" id="price">
+                        <input type="number" class="form-control" name="price" id="price" required>
                     </div>
                     <div class="mb-2 col-md-6 form-group">
                         <label for="weigth" class="form-label">Peso: </label>
-                        <input type="number" class="form-control" name="weigth" id="weigth">
+                        <input type="number" class="form-control" name="weigth" id="weigth" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="mb-2 col-md-6 form-group">
                         <label for="category" class="form-label">Categor&iacute;a: </label>
-                        <input type="text" class="form-control" name="category" id="category">
+                        <input type="text" class="form-control" name="category" id="category" required>
                     </div>
                     <div class="mb-2 col-md-6 form-group">
                         <label for="stock" class="form-label">Stock: </label>
-                        <input type="number" class="form-control" name="stock" id="stock">
+                        <input type="number" class="form-control" name="stock" id="stock" required>
                     </div>
                 </div>
                 <div class="d-grid p-2">
