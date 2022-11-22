@@ -12,6 +12,28 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
 
+            <!--Inicio Alert - Error -->
+            <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'error'){
+
+            ?>
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>¡ERROR!</strong> Ha ocurrido un error con el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - Error -->
+
             <!--Inicio Alert - Inserted -->
             <?php
                 if(isset($_GET['message']) and $_GET['message'] == 'inserted'){
@@ -33,6 +55,28 @@
                 }
             ?>
             <!--Fin Alert - Inserted -->
+
+            <!--Inicio Alert - Updated -->
+            <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'updated'){
+
+            ?>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>¡BIEN!</strong> Se ha actualizado el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - Updated -->
 
             <div class="card">
                 <div class="card-header text-center">
@@ -67,8 +111,8 @@
                                     <td><?php echo $dato->category;?></td>
                                     <td><?php echo $dato->stock;?></td>
                                     <td><?php echo $dato->creation_date;?></td>
-                                    <td>Editar</td>
-                                    <td>Eliminar</td>
+                                    <td class="text-info"><a href="update.php?id=<?php echo $dato->ID;?>"><i class="bi bi-pencil-fill"></a></i></td>
+                                    <td class="text-danger"><i class="bi bi-trash3-fill"></i></td>
                                 </tr>
                                 <?php 
                                     }
@@ -101,27 +145,7 @@
             ?>
             <!--Fin Alert - Missing -->
 
-             <!--Inicio Alert - NoInserted -->
-             <?php
-                if(isset($_GET['message']) and $_GET['message'] == 'noinserted'){
-
-            ?>
-
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <strong>¡ERROR!</strong> No se pudo crear el producto.
-            </div>
             
-            <script>
-              var alertList = document.querySelectorAll('.alert');
-              alertList.forEach(function (alert) {
-                new bootstrap.Alert(alert)
-              })
-            </script>
-
-            <?php
-                }
-            ?>
-            <!--Fin Alert - NoInserted -->
 
 
             <div class="card">
