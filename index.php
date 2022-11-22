@@ -78,6 +78,28 @@
             ?>
             <!--Fin Alert - Inserted -->
 
+            <!--Inicio Alert - Selled -->
+            <?php
+                if(isset($_GET['message']) and $_GET['message'] == 'selled'){
+
+            ?>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>¡BIEN!</strong> Se ha vendido el producto.
+            </div>
+            
+            <script>
+              var alertList = document.querySelectorAll('.alert');
+              alertList.forEach(function (alert) {
+                new bootstrap.Alert(alert)
+              })
+            </script>
+
+            <?php
+                }
+            ?>
+            <!--Fin Alert - Selled -->
+
             <!--Inicio Alert - Updated -->
             <?php
                 if(isset($_GET['message']) and $_GET['message'] == 'updated'){

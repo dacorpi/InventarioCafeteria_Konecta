@@ -46,7 +46,7 @@
                     <div class="mb-2 col-md-6 form-group">
                         <label for="category" class="form-label">Categor&iacute;a: </label>
                         <select class="form-control" name="category" id="category" required>
-                            <option value="" disabled selected>Selecciona</option>
+                            <option value="<?php echo $product->category ?>"><?php echo $product->category ?></option>
                             <option value="Bebidas">Bebidas</option>
                             <option value="Comidas">Comidas</option>
                             <option value="Panader&iacute;a">Panader&iacute;a</option>
@@ -61,7 +61,7 @@
                 <div class="d-grid p-2">
                     <input type="hidden" name="id" value="<?php echo $product->ID; ?>">
                     <input type="submit" class="btn btn-info m-2" value="Editar">
-                    <input type="button" class="btn btn-warning m-2" value="Regresar">
+                    <a class="text-center" href="index.php"><i class="bi bi-box-arrow-left"></i></a>
                 </div>
                 </form>
             </div>
