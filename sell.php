@@ -41,22 +41,21 @@
                 <div class="card-header text-center">
                     <b>VENTA DE PRODUCTO</b>
                 </div>
-                <form class="form-group p-3" method="POST" action="sellProcess.php">
-                <div class="form-group row">    
-                    <div class="mb-2 col-md-6 form-group">
+                <form class="p-3" method="POST" action="sellProcess.php">
+                <div>    
+                    <div class="mb-2">
                         <label for="name" class="form-label">Nombre: </label>
                         <input type="text" class="form-control" name="name" id="name" readonly value="<?php echo $product->product_name ?>">
-                    </div>
-                
-                    <div class="mb-2 col-md-6 form-group">
-                        <label for="price" class="form-label">Precio: </label>
-                        <input type="number" class="form-control" name="price" id="price" readonly value="<?php echo $product->price ?>">
-                    </div>
+                    </div> 
                 </div>
                 <div class="form-group row">
                     <div class="mb-2 col-md-6 form-group">
                         <label for="stock" class="form-label">Stock: </label>
                         <input type="number" class="form-control" name="stock" id="stock" readonly value="<?php echo $product->stock ?>">
+                    </div>
+                    <div class="mb-2 col-md-6 form-group">
+                        <label for="price" class="form-label">Precio: </label>
+                        <input type="number" class="form-control" name="price" id="price" readonly value="<?php echo $product->price ?>">
                     </div>
                 </div>
                 <div class="d-grid p-2">
@@ -77,3 +76,5 @@
         </div>
     </div>
 </div>
+
+<?php include 'Template/footer.php'?>
