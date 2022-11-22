@@ -14,14 +14,14 @@
     $product = $query->fetch(PDO::FETCH_OBJ);
 ?>
 
-<div class="container mt-5 p-4">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-5">
         <div class="card">
                 <div class="card-header text-center">
                     <b>EDICIÓN DE PRODUCTOS</b>
                 </div>
-                <form class="form-group p-3" method="POST" action="updateProcess.php">
+                <form class="form-group p-2" method="POST" action="updateProcess.php">
                 <div class="form-group row">    
                     <div class="mb-2 col-md-6 form-group">
                         <label for="name" class="form-label">Nombre: </label>
@@ -58,7 +58,7 @@
                         <input type="number" class="form-control" name="stock" id="stock" required value="<?php echo $product->stock ?>">
                     </div>
                 </div>
-                <div class="d-grid p-2">
+                <div class="d-grid p-1">
                     <input type="hidden" name="id" value="<?php echo $product->ID; ?>">
                     <input type="submit" class="btn btn-info m-2" value="Editar">
                     <a class="text-center" href="index.php"><i class="bi bi-box-arrow-left"></i></a>
@@ -68,4 +68,5 @@
         </div>
     </div>
 </div>
+<?php include 'Template/footer.php'?>
 
