@@ -3,6 +3,7 @@
 
 <head>
   <title>Cafetería Konecta</title>
+  <link rel="shortcut icon" href="/Imagenes/descarga.ico">
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
